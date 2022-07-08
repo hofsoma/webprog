@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>New Dawn</title>
+    <style>
+        #canvas{
+            visibility: hidden;
+            background-color: black;
+            margin: auto;
+            /*padding: 2px;*/
+            display: block;
+        }
+        #starting-div{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 5px;
+            transform: translate(-50%, -50%);
+            background-color: gold ;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+        }
+        #game-over-div{
+            visibility: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 5px;
+            transform: translate(-50%, -50%);
+            background-color: gold ;
+            color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+        }
+        #h{
+            position: absolute;
+            margin: auto;
+        }
+        #help-div{
+            visibility: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 2px;
+            transform: translate(-50%, -50%);
+            background-color: whitesmoke;
+            color: black;
+        }
+        #leaderboard-div{
+            visibility: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 2px;
+            transform: translate(-50%, -50%);
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="580"></canvas> <!-- 116*100-os matrix -->
+
+    <div id="starting-div">
+        <label for="name">Írd be a neved!</label>
+        <input type="text" name="name" placeholder="Anonymus" id="name-input">
+        <button id="start-game-button" onclick="startGame()">START</button>
+    </div>
+
+    <div id="game-over-div">
+        <p id="game-over-status"></p>
+        <p id="game-over-points"></p>
+        <button id="new-game-button" onclick="startGame()">ÚJ JÁTÉK</button>
+    </div>
+
+    <div id="help-div">
+        <p>Mozgás: nyilak</p>
+        <p>Toplista: t</p>
+        <p>Ghost 1-es sebesség: 1</p>
+        <p>Ghost 2-es sebesség: 2</p>
+    </div>
+
+    <div id="leaderboard-div">
+        <!-- ajax, php ~~> tablazat -->
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
